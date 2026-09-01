@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-obsidian text-ivory font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: #a78b68;
+    color: #111111;
+  }
+
+  :focus-visible {
+    outline: 2px solid #a78b68;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-sans text-xs uppercase tracking-widest2 text-bronze;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-bronze text-obsidian font-sans font-semibold text-sm uppercase tracking-wider px-8 py-4 transition-all duration-500 ease-cinematic hover:bg-ivory;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-ivory/40 text-ivory font-sans font-semibold text-sm uppercase tracking-wider px-8 py-4 transition-all duration-500 ease-cinematic hover:border-bronze hover:text-bronze;
+  }
+
+  .reveal {
+    opacity: 0;
+  }
+
+  .reveal.is-visible {
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
