@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import FeaturedWork from "./components/FeaturedWork";
@@ -26,6 +27,7 @@ export default function App() {
         <FinalCTA />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
